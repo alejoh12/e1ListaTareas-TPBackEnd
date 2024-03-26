@@ -68,3 +68,17 @@ export const editarTareaNombre = async(req,res) => {
     res.status(500).json({mensaje:"Ocurrió un error al editar el producto."})
   }
 }
+
+export const borrarTarea = async(req,res) => {
+  try {
+    const tareaBuscada = await Tarea.findById(req.params.id);
+    if(!tareaBuscada) {
+      return res.status(404).json({mensaje: "El producto no fue encontrado."})
+    }
+    await Tarea.findOneAndDelete(req.params.id);
+    res.status(200).json({mensaje:"El producto fue borrado correctamente."})
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({mensaje:"Ocurrió un error al borrar el producto."})
+  }
+}

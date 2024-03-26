@@ -36,7 +36,7 @@ export const obtenerTarea = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(404).json({
-      mensaje: "No se encontró el producto buscado.",
+      mensaje: "No se encontro el producto buscado.",
     });
   }
 };

@@ -4,8 +4,7 @@ const tareaSchema = new Schema({
     nombreTarea:{
         type:String,
         required: true,
-        maxlength: 20,
-        unique: true
+        maxlength: 50
     }
 })
 

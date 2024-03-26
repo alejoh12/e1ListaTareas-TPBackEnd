@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { listarTareas } from "../controllers/tareas.controller.js";
+import { crearTarea, listarTareas } from "../controllers/tareas.controller.js";
 
 const router = Router();
 
-router.route("/tareas").get(listarTareas);
+router.route("/tareas").get(listarTareas).post(crearTarea);
 
 export default router;
